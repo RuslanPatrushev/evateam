@@ -1,0 +1,16 @@
+<div class="note">
+  <div *ngIf="(noteService.currentNote$ | async) let note; else unsetRef">
+    <p>
+      {{note.title}}
+    </p>
+    <p *ngFor="let paragraph of note.description">
+      {{paragraph}}
+    </p>
+  </div>
+</div>
+
+<ng-template #unsetRef>
+  <p>
+    {{noteUnsetMessage}}
+  </p>
+</ng-template>

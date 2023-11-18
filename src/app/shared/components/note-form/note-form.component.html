@@ -1,0 +1,25 @@
+<form [formGroup]="noteFormGroup" novalidate class="note-form">
+  <p class="note-form__title">
+    {{noteForm.formTitle}}
+  </p>
+  <div class="form-group">
+    <p class="form-group__title">
+      {{noteForm.titleLabel}}
+    </p>
+    <input formControlName="title" type="text">
+  </div>
+  <div class="form-group">
+    <p class="form-group__title">
+      {{noteForm.descriptionLabel}}
+    </p>
+    <textarea formControlName="description"></textarea>
+  </div>
+  <button
+    class="note-form__submit"
+    type="submit"
+    (click)="onAddNote()"
+    [disabled]="noteFormGroup.invalid"
+  >
+    {{noteForm.submitLabel}}
+  </button>
+</form>

@@ -1,0 +1,22 @@
+@use '../../../theme' as theme;
+
+.note {
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+
+  p {
+    margin: 11px 0;
+
+    &:first-child {
+      color: theme.$color-primary;
+      font-weight: bolder;
+      font-size: 35px;
+      margin: 32px 0 20px 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
